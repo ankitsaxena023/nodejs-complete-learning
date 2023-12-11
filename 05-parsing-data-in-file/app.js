@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
     res.setHeader("Location", "/");
     return res.end();
 
-    // Note: 2. above event listener code is problematic because if we do something in
+    // Note: 2. above event listener code is problematic because if we do something in the event listener which influences the response this is the wrong way
   }
 
   res.setHeader("Content-Type", "text/html");
