@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
       body.push(chunk);
     });
     // 2. now after all the chunks collected in the body we make a buffer and store our body array in it
-    req.on("end", () => {
+    return req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       console.log(message.split("+").join(" "));
