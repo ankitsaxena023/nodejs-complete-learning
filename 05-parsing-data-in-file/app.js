@@ -28,6 +28,7 @@ const server = http.createServer((req, res) => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       console.log(message.split("+").join(" "));
+      // Note: line number 32 executes after line number 35-37 code, means
       fs.writeFileSync("message.txt", message);
     });
 
