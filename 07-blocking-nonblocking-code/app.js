@@ -24,14 +24,17 @@ const server = http.createServer((req, res) => {
       body.push(chunk);
     });
     // 2. now after all the chunks collected in the body we make a buffer and store our body array in it
-    return req.on("end", () => {
+    req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       console.log(message.split("+").join(" "));
-      fs.writeFileSync("message.txt", message);
-      res.statusCode = 302;
-      res.setHeader("Location", "/");
-      return res.end();
+      // Instead of writeFileSync which handles data synchronously and if data is really big then it'll not execute further until it's done and neither take another user's query
+      // fs.writeFileSync("message.txt", message);
+      fs.writeFile("message.txt", message, (err) => {
+        res.statusCode = 302;
+        res.setHeader("Location", "/");
+        return res.end();
+      });
     });
   }
 
