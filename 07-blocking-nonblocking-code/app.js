@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       console.log(message.split("+").join(" "));
-      // Instead of writeFileSync which handles data synchronously and if data is really big then it'll not execute further until it's done and neither take another user's query
+      // Instead of writeFileSync which handles data synchronously and if data is really big then it'll not execute further and block the code execution until it's done and neither take another user's query
       // fs.writeFileSync("message.txt", message);
       fs.writeFile("message.txt", message, (err) => {
         res.statusCode = 302;
