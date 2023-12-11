@@ -55,5 +55,10 @@ const requestHandler = (req, res) => {
 
 // 3rd way to export
 
-module.exports.handler = requestHandler;
-module.exports.someText = "some hard coded text";
+// module.exports.handler = requestHandler;
+// module.exports.someText = "some hard coded text";
+
+// 4th way to export by node.js shorter way
+
+exports.handler = requestHandler;
+exports.someText = "some hard coded text";
