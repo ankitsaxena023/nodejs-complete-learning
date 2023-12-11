@@ -28,7 +28,9 @@ const server = http.createServer((req, res) => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       console.log(message.split("+").join(" "));
-      // Note: line number 32 executes after line number 35-37 code, means
+
+      // Note: line number 34 executes after line number 37-39 code, means it'll executes after response sent because it's an asynchronous method of node js and due to event loop it'll executes later we solve this problem with writeFile method
+
       fs.writeFileSync("message.txt", message);
     });
 
