@@ -15,12 +15,12 @@ const app = express();
 
 app.use((req, res, next) => {
   console.log("In the middleware");
-  next(); // this next function allows req to travel on to the next middleware
+  next(); // this next function allows req to travel on to the next middleware from top to bottom
 });
 
 app.use((req, res, next) => {
   console.log("In another middleware");
-  res.send("<h1>Hello from Express.js</h1>");
+  res.send("<h1>Hello from Express.js</h1>"); // thanks to express.js now we don't need to type that whold bunch of html code for response as we did previously
 });
 
 const server = http.createServer(app);
