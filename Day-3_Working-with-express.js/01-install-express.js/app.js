@@ -4,6 +4,10 @@ const express = require("express");
 // make an express application here
 const app = express();
 
+// so for plugged in other libraries to application with we use "app.use()" but after creating app object but before pass it to create server, use allow us to add new middleware function
+
+app.use();
+
 const server = http.createServer(app);
 
 server.listen(3000);
