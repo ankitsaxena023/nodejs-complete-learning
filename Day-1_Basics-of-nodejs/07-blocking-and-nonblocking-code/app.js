@@ -16,19 +16,16 @@ const server = http.createServer((req, res) => {
   }
 
   if (url === "/message" && method === "POST") {
-    // Note : for parsing data we need stream of chunks and a buffer
-    // 1. we store all the chunks in body array
     const body = [];
     req.on("data", (chunk) => {
       console.log("chunk", chunk);
       body.push(chunk);
     });
-    // 2. now after all the chunks collected in the body we make a buffer and store our body array in it
+
     return req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
       // Instead of writeFileSync which handles data synchronously and if data is really big then it'll not execute further and block the code execution until it's done and neither take another user's query
-      // fs.writeFileSync("message.txt", message);
       fs.writeFile("message.txt", message, (err) => {
         res.statusCode = 302;
         res.setHeader("Location", "/");
