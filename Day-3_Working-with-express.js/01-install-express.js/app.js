@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 
 // so for plugged in other libraries to application with we use "app.use()" but after creating app object but before pass it to create server, use allow us to add new middleware function
+// and this use accepts array of request handlers
 
 app.use();
 
