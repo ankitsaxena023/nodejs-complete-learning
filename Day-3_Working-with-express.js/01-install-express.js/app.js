@@ -10,7 +10,7 @@ const app = express();
 
 app.use((req, res, next) => {
   console.log("In the middleware");
-  next();
+  next(); // this next function allows req to travel on to the next middleware
 });
 
 app.use((req, res, next) => {
