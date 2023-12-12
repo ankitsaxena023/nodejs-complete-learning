@@ -8,4 +8,4 @@ const server = http.createServer(app);
 
 server.listen(3000);
 
-//Note : express js is all about middleware where middleware means
+//Note : express js is all about middleware where middleware means incoming requests with
