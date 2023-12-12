@@ -16,14 +16,12 @@ const server = http.createServer((req, res) => {
   }
 
   if (url === "/message" && method === "POST") {
-    // Note : for parsing data we need stream of chunks and a buffer
-    // 1. we store all the chunks in body array
     const body = [];
     req.on("data", (chunk) => {
       console.log("chunk", chunk);
       body.push(chunk);
     });
-    // 2. now after all the chunks collected in the body we make a buffer and store our body array in it
+
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
