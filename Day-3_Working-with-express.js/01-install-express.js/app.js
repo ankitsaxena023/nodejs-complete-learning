@@ -26,6 +26,7 @@ app.use((req, res, next) => {
   res.send("<h1>Hello from Express.js</h1>"); // thanks to express.js now we don't need to type that whole bunch of html code for response as we did previously
 });
 
+// Note: And as we're using Express.js we also can remove below code for listening from server and can use express app
 const server = http.createServer(app);
 
 server.listen(3000);
