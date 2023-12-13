@@ -32,3 +32,11 @@ app.use((req, res, next) => {
 // server.listen(3000);
 
 app.listen(3000); // if you read express document in github you'll find app.listen() already doing above functionality and now you can remove http module
+
+// Index
+
+// 1. Express.js
+// 2. Middleware
+// 3. next function importance
+// 4. app.listen(); importance
+// 5. res.send() function importance
