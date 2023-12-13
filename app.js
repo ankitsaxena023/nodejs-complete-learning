@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded()); // this body-parser parse the data like form data for us which we've been parsing our own in the previous section but for other kind of data parsing like file data we'll use different parser, and express
 
 app.use("/", (req, res, next) => {
   console.log("1. This always runs!");
