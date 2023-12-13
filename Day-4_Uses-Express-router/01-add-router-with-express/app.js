@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use();
+app.use(adminRoutes);
 
 app.use("/", (req, res, next) => {
   res.send("<h1>Hello from Express.js</h1>");
