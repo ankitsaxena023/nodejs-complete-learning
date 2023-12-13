@@ -1,6 +1,9 @@
 const http = require("http");
 const express = require("express");
 
+// Q. what is Express.js ?
+// Ans. Express.js is a framework
+
 // make an express application here
 
 //Note : express js is all about middleware where middleware means incoming requests funneled(move, pass) through a bunch of functions so basically you can have multiple functions of request handlers until you send a response
