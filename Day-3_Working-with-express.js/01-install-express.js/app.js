@@ -1,4 +1,4 @@
-const http = require("http");
+// const http = require("http");
 const express = require("express");
 
 // Q. what is Express.js ?
@@ -31,4 +31,4 @@ app.use((req, res, next) => {
 // const server = http.createServer(app);
 // server.listen(3000);
 
-app.listen(3000);
+app.listen(3000); // if you read express document in github you'll find app.listen() already doing above functionality and now you can remove http module
