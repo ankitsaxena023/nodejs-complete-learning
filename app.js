@@ -1,8 +1,9 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(body)
+app.use(bodyParser.urlencoded());
 
 app.use("/", (req, res, next) => {
   console.log("1. This always runs!");
