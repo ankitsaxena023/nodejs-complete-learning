@@ -12,7 +12,7 @@ app.use(adminRoutes);
 app.use(shopRoutes);
 
 app.use("/", (req, res, next) => {
-  res.status(404).send("<h1>Page not found!</h1>");
+  res.status(404).send("<h1>Page not found!</h1>"); // so here we can send code for handle error and we can use chain of methods here like we did status but always remember send should be the last one
 });
 
 app.listen(3000);
