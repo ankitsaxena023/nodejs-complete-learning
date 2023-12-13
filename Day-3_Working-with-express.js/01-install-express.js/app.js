@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
   console.log("In another middleware");
-  res.send("<h1>Hello from Express.js</h1>"); // thanks to express.js now we don't need to type that whold bunch of html code for response as we did previously
+  res.send("<h1>Hello from Express.js</h1>"); // thanks to express.js now we don't need to type that whole bunch of html code for response as we did previously
 });
 
 const server = http.createServer(app);
