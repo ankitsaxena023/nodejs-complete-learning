@@ -16,7 +16,7 @@ app.use("/add-product", (req, res, next) => {
 
 // app.use("/product", (req, res, next) => {
 
-//Note: here app also give us app.get and app.post filter so that we can filter our request according to our need, so below function only will fire for POST request because /product is an POST method as mentioned /add-product
+//Note: here app also give us app.get and app.post filter so that we can filter our request according to our need, so below function only will fire for POST request because /product is an POST method as mentioned /add-product and like get and post http methods app has put, patch, delete and
 
 app.post("/product", (req, res, next) => {
   console.log(req.body);
