@@ -44,6 +44,13 @@
       .main-header__item a {
         text-decoration: none;
         color: black;
+        font-weight: bold;
+      }
+
+      .main-header__item a:hover,
+      .main-header__item a:active,
+      .main-header__item a.active {
+        color: #3e00a1;
       }
 
       .product-form {
@@ -93,7 +100,7 @@
             <a href="/">Shop</a>
           </li>
           <li class="main-header__item">
-            <a href="/admin/add-product">Add Product</a>
+            <a class="active" href="/admin/add-product">Add Product</a>
           </li>
         </ul>
       </nav>
