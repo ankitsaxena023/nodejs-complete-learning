@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
       const parsedBody = Buffer.concat(body).toString();
       console.log("parsedbody", parsedBody);
 
-      const message = parsedBody.split("=")[1];
+      const message = parsedBody.split("=")[0];
       console.log("message", message);
 
       // Note: 1. line number 31 executes after line number 34-36 code, means it'll executes after response sent because it's an synchronous method of node js and due to which it'll not wait in event loop it'll executes immediately later we solve this problem with writeFile method
