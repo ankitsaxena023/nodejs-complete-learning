@@ -2,10 +2,10 @@ const express = require("express");
 
 const app = express();
 
-app.use("/", (req, res, next) => {
-  console.log("1. This always runs!");
-  next();
-});
+// app.use("/", (req, res, next) => {
+//   console.log("1. This always runs!");
+//   next();
+// });
 
 app.use("/add-product", (req, res, next) => {
   console.log("2. In another middleware");
