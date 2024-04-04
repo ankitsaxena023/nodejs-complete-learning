@@ -1,9 +1,9 @@
 const express = require("express");
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-// app.use(bodyParser.urlencoded({ extended: false })); // this body-parser parse the data like form data for us which we've been parsing our own in the previous section but for other kind of data parsing like file data we'll use different parser, and this makes express so extensible
+app.use(bodyParser.urlencoded({ extended: false })); // this body-parser parse the data like form data for us which we've been parsing our own in the previous section but for other kind of data parsing like file data we'll use different parser, and this makes express so extensible
 
 app.get("/add-product", (req, res, next) => {
   // console.log("2. In another middleware");
